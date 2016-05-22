@@ -181,10 +181,15 @@ snippet button:s
 	<button type="submit">${0}</button>
 snippet button:r
 	<button type="reset">${0}</button>
+# canvas
 snippet canvas
-	<canvas>
-		${0}
-	</canvas>
+	<canvas width="${0}" height="${1}">${2}</canvas>
+snippet canvas.
+	<canvas class="${0}" width="${1}" height="${2}">${3}</canvas>
+snippet canvas#
+	<canvas id="${0}" width="${1}" height="${2}">${3}</canvas>
+snippet canvas#.
+	<canvas id="${0}" class="${1}" width="${2}" height="${3}">${4}</canvas>
 snippet caption
 	<caption>${0}</caption>
 snippet cite
@@ -666,18 +671,13 @@ snippet samp
 	<samp>
 		${0}
 	</samp>
+# script
 snippet script
-	<script type="text/javascript" charset="utf-8">
-		${0}
-	</script>
-snippet scripts
-	<script src="${0}.js"></script>
-snippet scriptt
-	<script type="${1}" id="${2}">
+	<script type="text/javascript">
 		${0}
 	</script>
 snippet scriptsrc
-	<script src="${0}.js" type="text/javascript" charset="utf-8"></script>
+	<script src="${0}.js"></script>
 snippet section
 	<section>
 		${0}

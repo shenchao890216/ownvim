@@ -6,6 +6,10 @@ set modelines=0		" CVE-2007-2438
 set nocompatible	" Use Vim defaults instead of 100% vi compatibility
 set backspace=2		" more powerful backspacing
 
+if exists('$TMUX')
+	set term=screen-256color
+endif
+
 " pathogen设置
 execute pathogen#infect()
 " 主题设置
@@ -13,6 +17,7 @@ syntax enable
 set background=dark
 "colorscheme solarized
 colorscheme molokai
+"colorscheme Tomorrow-Night-Bright
 
 set guifont=Monaco:h14
 
@@ -33,9 +38,15 @@ filetype plugin indent on
 
 " 自动读取文件
 set autoread
+" 自动浏览第一处搜索
+set incsearch
 
 " call togglebg#map("<F5>")
 map <F5> :NERDTreeToggle<CR>
+map <F6> <C-w>h
+map <F7> <C-w>l
+map <F9> <C-w>j
+map <F10> <C-w>k
 " 缩进设置.
 set tabstop=4
 set softtabstop=4
@@ -50,6 +61,15 @@ endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<F4>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"tab 竖线
+set list
+set lcs=tab:\|\ ,nbsp:%,trail:-
+highlight LeaderTab guifg=#666666
+match LeaderTab /^\t/
+
+" ejs文件html高亮.
+au BufNewFile,BufRead *.ejs set filetype=html
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
