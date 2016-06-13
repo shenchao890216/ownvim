@@ -42,11 +42,19 @@ set autoread
 set incsearch
 
 " call togglebg#map("<F5>")
-map <F5> :NERDTreeToggle<CR>
+" map <F5> :NERDTreeToggle<CR>
+map <F5> <plug>NERDTreeTabsToggle<CR>
 map <F6> <C-w>h
 map <F7> <C-w>l
 map <F9> <C-w>j
 map <F10> <C-w>k
+
+" 调节窗口大小
+nmap w= :resize +3<CR>
+nmap w- :resize -3<CR>
+nmap w, :vertical resize +3<CR>
+nmap w. :vertical resize -3<CR>
+
 " 缩进设置.
 set tabstop=4
 set softtabstop=4
@@ -70,6 +78,31 @@ match LeaderTab /^\t/
 
 " ejs文件html高亮.
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+
+" These lines setup the environment to show graphics and colors correctly.
+set t_Co=256
+ 
+let g:minBufExplForceSyntaxEnable = 1
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+ 
+if ! has('gui_running')
+   set ttimeoutlen=10
+   augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+   augroup END
+endif
+ 
+set laststatus=2 " Always display the statusline in all windows
+set guifont=Inconsolata\ for\ Powerline:h14
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
