@@ -249,7 +249,7 @@ snippet dialog
 snippet div
 	<div>${0}</div>
 snippet div.
-	<div class="${0}">${1}</div>
+	<div class="${1}">${0}</div>
 snippet div#
 	<div id="${0}">${1}</div>
 snippet div#.
@@ -456,17 +456,17 @@ snippet img.
 snippet img#
 	<img id="${1}" src="${2}" alt="${3}" />
 snippet input
-	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}" />
+	<input type="${1}" name="${2}" id="${3:$2}"/>
 snippet input.
 	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}" />
 snippet input:text
-	<input type="text" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="text" name="${1}" id="${2:$1}" />
 snippet input:submit
-	<input type="submit" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="submit" name="${1}" id="${2:$1}" />
 snippet input:hidden
-	<input type="hidden" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="hidden" name="${1}" id="${2:$1}" />
 snippet input:button
-	<input type="button" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="button" name="${1}" id="${2:$1}" />
 snippet input:image
 	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4}" />
 snippet input:checkbox
