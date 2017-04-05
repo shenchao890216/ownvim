@@ -60,6 +60,8 @@ colorscheme Tomorrow-Night
 set autoread
 " 自动搜索第一处搜索
 set incsearch
+" 设置剪贴板
+set clipboard=unnamed
 
 " 配置macvim
 if has("gui_running")
