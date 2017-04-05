@@ -9,6 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " 要安装的插件
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mattn/emmet-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'kien/ctrlp.vim'
@@ -48,7 +50,8 @@ set autoindent
 " 设置空格代替tab
 set expandtab
 " 设置gui的字体
-set guifont=Literation_Mono_Powerline:h16
+" set guifont=Literation_Mono_Powerline:h16
+set guifont=Roboto_Mono_Light_for_Powerline:h18
 " 设置配色
 " set background=dark
 colorscheme Tomorrow-Night
@@ -68,6 +71,8 @@ endif
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
+" 关闭时如果只有nerdtree，就关闭它
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 map <F6> <C-w>h
 map <F7> <C-w>l
 map <F8> <C-w>j
