@@ -20,6 +20,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'posva/vim-vue'
+Plugin 'scrooloose/nerdcommenter'
 " Plugin 'Valloric/YouCompleteMe'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
