@@ -63,6 +63,8 @@ set autoread
 set incsearch
 " 设置剪贴板
 set clipboard=unnamed
+" 设置快捷键前缀
+let mapleader=";"
 
 " 配置macvim
 if has("gui_running")
