@@ -61,7 +61,7 @@ set autoindent
 set expandtab
 " 设置gui的字体
 " set guifont=Literation_Mono_Powerline:h16
-set guifont=Roboto_Mono_Light_for_Powerline:h18
+set guifont=Roboto_Mono_Light_for_Powerline:h15
 " 设置配色
 " set background=dark
 colorscheme Tomorrow-Night
@@ -74,6 +74,7 @@ set incsearch
 set clipboard=unnamed
 " 设置快捷键前缀
 let mapleader=";"
+set modifiable
 set fileformat=unix
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
@@ -86,6 +87,10 @@ if has("gui_running")
 	" 隐藏右侧滚动条
 	set guioptions-=r
 endif
+
+" 快速导航buffer
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>n :bn<CR>
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
