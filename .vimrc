@@ -21,7 +21,7 @@ Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'posva/vim-vue'
 Plugin 'scrooloose/nerdcommenter'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
@@ -102,6 +102,10 @@ set laststatus=2
 let g:airline_theme="powerlineish"
 " let g:airline_theme="luna"
 let g:airline_powerline_fonts=1
+
+"YCM
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
 " 设置ejs文件html高亮
 au BufNewFile,BufRead *.ejs set filetype=html
