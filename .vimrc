@@ -16,6 +16,15 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'hail2u/vim-css3-syntax'     
+Plugin 'JulesWang/css.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
+Plugin 'ap/vim-css-color'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
@@ -65,6 +74,10 @@ set incsearch
 set clipboard=unnamed
 " 设置快捷键前缀
 let mapleader=";"
+set fileformat=unix
+set fileformats=unix,dos,mac
+set fileencoding=utf-8
+set matchpairs=(:),{:},[:],<:>
 
 " 配置macvim
 if has("gui_running")
@@ -76,8 +89,12 @@ endif
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 " 关闭时如果只有nerdtree，就关闭它
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 map <F6> <C-w>h
 map <F7> <C-w>l
 map <F8> <C-w>j
@@ -102,10 +119,30 @@ set laststatus=2
 let g:airline_theme="powerlineish"
 " let g:airline_theme="luna"
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "YCM
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+
+"Nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+"vim-javascript
+let javascript_enable_domhtmlcss = 1
+
+"vim-jsx
+let g:jsx_ext_required = 0
+
+"scss-syntax
+autocmd FileType scss set iskeyword+=-
+autocmd BufRead,BufNewFile *.scss set filetype=scss.css
 
 " 设置ejs文件html高亮
 au BufNewFile,BufRead *.ejs set filetype=html
