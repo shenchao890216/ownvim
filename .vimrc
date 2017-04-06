@@ -90,6 +90,7 @@ endif
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
+let NERDTreeShowBookmarks=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
