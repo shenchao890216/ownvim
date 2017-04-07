@@ -31,6 +31,9 @@ Plugin 'othree/es.next.syntax.vim'
 Plugin 'posva/vim-vue'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'terryma/vim-multiple-cursors'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
