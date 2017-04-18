@@ -34,6 +34,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'joshdick/onedark.vim'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
@@ -67,7 +68,8 @@ set expandtab
 set guifont=Roboto_Mono_Light_for_Powerline:h15
 " 设置配色
 " set background=dark
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+colorscheme onedark
 " colorscheme solarized
 " 自动读取文件
 set autoread
@@ -82,6 +84,7 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set matchpairs=(:),{:},[:],<:>
+" set autochdir
 
 " 配置macvim
 if has("gui_running")
