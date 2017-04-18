@@ -65,7 +65,7 @@ set autoindent
 set expandtab
 " 设置gui的字体
 " set guifont=Literation_Mono_Powerline:h16
-set guifont=Roboto_Mono_Light_for_Powerline:h15
+set guifont=Roboto_Mono_Light_for_Powerline:h17
 " 设置配色
 " set background=dark
 " colorscheme Tomorrow-Night
