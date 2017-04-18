@@ -92,8 +92,10 @@ if has("gui_running")
 endif
 
 " 快速导航buffer
-nnoremap <Leader>p :bp<CR>
-nnoremap <Leader>n :bn<CR>
+" nnoremap <Leader>p :bp<CR>
+" nnoremap <Leader>n :bn<CR>
+noremap <silent> <Left> :bp<CR>
+noremap <silent> <Right> :bn<CR>
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
