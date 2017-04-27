@@ -36,6 +36,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'joshdick/onedark.vim'
 Plugin 'rking/ag.vim'
+Plugin 'qpkorr/vim-bufkill'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
@@ -122,6 +123,9 @@ nmap w= :resize +3<CR>
 nmap w- :resize -3<CR>
 nmap w, :vertical resize +3<CR>
 nmap w. :vertical resize -3<CR>
+
+" 配置bufkill快捷键
+map <F2> :BD<cr>
 
 " 设置emmet
 let g:user_emmet_expandabbr_key='<Tab>'
