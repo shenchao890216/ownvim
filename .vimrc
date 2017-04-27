@@ -34,6 +34,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'joshdick/onedark.vim'
+Plugin 'rking/ag.vim'
+Plugin 'qpkorr/vim-bufkill'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
@@ -63,11 +66,12 @@ set autoindent
 " 设置空格代替tab
 set expandtab
 " 设置gui的字体
-" set guifont=Literation_Mono_Powerline:h16
-set guifont=Roboto_Mono_Light_for_Powerline:h15
+" set guifont=Literation_Mono_Powerline:h18
+set guifont=Source_Code_Pro_for_Powerline:h18
 " 设置配色
 " set background=dark
 colorscheme Tomorrow-Night
+" colorscheme onedark
 " colorscheme solarized
 " 自动读取文件
 set autoread
@@ -82,6 +86,9 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 set fileencoding=utf-8
 set matchpairs=(:),{:},[:],<:>
+" 设置ag的快捷键
+map <F3> :Ag<space>
+" set autochdir
 
 " 配置macvim
 if has("gui_running")
@@ -92,8 +99,10 @@ if has("gui_running")
 endif
 
 " 快速导航buffer
-nnoremap <Leader>p :bp<CR>
-nnoremap <Leader>n :bn<CR>
+" nnoremap <Leader>p :bp<CR>
+" nnoremap <Leader>n :bn<CR>
+noremap <silent> <Left> :bp<CR>
+noremap <silent> <Right> :bn<CR>
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
@@ -109,6 +118,15 @@ map <F7> <C-w>l
 map <F8> <C-w>j
 map <F9> <C-w>k
 
+" 调节窗口大小
+nmap w= :resize +3<CR>
+nmap w- :resize -3<CR>
+nmap w, :vertical resize +3<CR>
+nmap w. :vertical resize -3<CR>
+
+" 配置bufkill快捷键
+map <F2> :BD<cr>
+
 " 设置emmet
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -116,12 +134,12 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " 设置ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-			\'dir': '\v[\/]\.(git|hg|svn)$',
-			\'file': '\v\.(exe|so|dll|jpg|png|jpeg)$'
-			\}
+let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
 let g:ctrlp_cmd='CtrlP'
+
+" 设置ag
+let g:ag_working_path_mode="r"
 
 " 设置vim-airline
 set laststatus=2
@@ -144,10 +162,10 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 "vim-javascript
-let javascript_enable_domhtmlcss = 1
+" let javascript_enable_domhtmlcss = 1
 
 "vim-jsx
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 "scss-syntax
 autocmd FileType scss set iskeyword+=-
