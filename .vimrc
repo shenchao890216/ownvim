@@ -34,7 +34,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
 " 你所有的插件都要在下面执行前添加
 call vundle#end()
 filetype plugin indent on
@@ -68,8 +68,8 @@ set expandtab
 set guifont=Roboto_Mono_Light_for_Powerline:h17
 " 设置配色
 " set background=dark
-" colorscheme Tomorrow-Night
-colorscheme onedark
+colorscheme Tomorrow-Night
+" colorscheme onedark
 " colorscheme solarized
 " 自动读取文件
 set autoread
@@ -121,10 +121,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " 设置ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-			\'dir': '\v[\/]\.(git|hg|svn)$',
-			\'file': '\v\.(exe|so|dll|jpg|png|jpeg)$'
-			\}
+let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
 let g:ctrlp_cmd='CtrlP'
 
