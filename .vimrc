@@ -66,9 +66,10 @@ set fileencodings=utf-8
 set clipboard=unnamed
 " 在vim中可以使用鼠标.
 set mouse=a
-set paste
+" set paste
 
 " 设置emmet
+autocmd FileType html,css,scss,sass EmmetInstall
 let g:user_emmet_expandabbr_key='<Tab>'
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
