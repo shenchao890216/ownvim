@@ -50,9 +50,11 @@ set t_Co=256
 " 突出当前行.
 set cursorline
 " 自动切换到当前目录.
-set autochdir
+" set autochdir
 " 自动读取文件.
 set autoread
+" 搜索忽略大小写.
+set ic
 " 自动搜索第一处.
 set incsearch
 " 设置换行编码
