@@ -12,7 +12,8 @@ Plugin 'yggdroot/indentline'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tomasr/molokai'
+" Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
@@ -44,7 +45,9 @@ set shiftwidth=2
 set autoindent
 set expandtab
 " 设置配色.
-colorscheme molokai
+" colorscheme molokai
+set background=dark
+colorscheme solarized
 " 设置配色256.
 set t_Co=256
 " 突出当前行.
@@ -77,7 +80,7 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " airline设置.
 set laststatus=2
-let g:airline_theme="molokai"
+let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts=1
 
 " molokai设置.
