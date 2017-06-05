@@ -12,8 +12,8 @@ Plugin 'yggdroot/indentline'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'fugalh/desert.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
@@ -25,6 +25,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'raimondi/delimitmate'
 call vundle#end()
 filetype plugin indent on
 
@@ -45,9 +47,12 @@ set shiftwidth=2
 set autoindent
 set expandtab
 " 设置配色.
-" colorscheme molokai
 set background=dark
-colorscheme solarized
+" molokai设置.
+let g:molokai_original = 1
+" let g:rehash256 = 1
+colorscheme molokai
+
 " 设置配色256.
 set t_Co=256
 " 突出当前行.
@@ -82,10 +87,6 @@ imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 set laststatus=2
 let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts=1
-
-" molokai设置.
-let g:molokai_original = 1
-let g:rehash256 = 1
 
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
