@@ -12,8 +12,8 @@ Plugin 'yggdroot/indentline'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
@@ -44,10 +44,12 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
+" molokai设置.
+let g:molokai_original = 1
+let g:rehash256 = 1
 " 设置配色.
-" colorscheme molokai
 set background=dark
-colorscheme solarized
+colorscheme molokai
 " 设置配色256.
 set t_Co=256
 " 突出当前行.
@@ -83,10 +85,6 @@ set laststatus=2
 let g:airline_theme="powerlineish"
 let g:airline_powerline_fonts=1
 
-" molokai设置.
-let g:molokai_original = 1
-let g:rehash256 = 1
-
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
@@ -106,6 +104,18 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
+
+" 配置macvim
+if has("gui_running")
+	" 隐藏左侧滚动条
+	set guioptions-=L
+	" 隐藏右侧滚动条
+	set guioptions-=r
+endif
+
+" 设置gui的字体
+" set guifont=Literation_Mono_Powerline:h18
+set guifont=Source_Code_Pro_for_Powerline:h16
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
