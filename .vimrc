@@ -13,7 +13,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomasr/molokai'
-Plugin 'fugalh/desert.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
@@ -25,8 +24,6 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'raimondi/delimitmate'
 call vundle#end()
 filetype plugin indent on
 
@@ -50,10 +47,6 @@ set expandtab
 let g:molokai_original = 1
 let g:rehash256 = 1
 " 设置配色.
-set background=dark
-" molokai设置.
-let g:molokai_original = 1
-" let g:rehash256 = 1
 colorscheme molokai
 " 设置配色256.
 set t_Co=256
@@ -112,10 +105,10 @@ let g:ctrlp_map='<F4>'
 
 " 配置macvim
 if has("gui_running")
-	" 隐藏左侧滚动条
-	set guioptions-=L
-	" 隐藏右侧滚动条
-	set guioptions-=r
+   " 隐藏左侧滚动条
+   set guioptions-=L
+   " 隐藏右侧滚动条
+   set guioptions-=r
 endif
 
 " 设置gui的字体
