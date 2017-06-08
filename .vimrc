@@ -24,6 +24,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'raimondi/delimitmate'
 call vundle#end()
 filetype plugin indent on
 
@@ -105,15 +107,15 @@ let g:ctrlp_map='<F4>'
 
 " 配置macvim
 if has("gui_running")
-   " 隐藏左侧滚动条
-   set guioptions-=L
-   " 隐藏右侧滚动条
-   set guioptions-=r
+  " 隐藏左侧滚动条
+  set guioptions-=L
+  " 隐藏右侧滚动条
+  set guioptions-=r
+  " 设置gui的字体
+  " set guifont=Literation_Mono_Powerline:h18
+  set guifont=Source_Code_Pro_for_Powerline:h18
 endif
 
-" 设置gui的字体
-" set guifont=Literation_Mono_Powerline:h18
-set guifont=Source_Code_Pro_for_Powerline:h16
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
