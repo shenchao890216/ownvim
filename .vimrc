@@ -26,6 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'raimondi/delimitmate'
+Plugin 'elzr/vim-json'
 call vundle#end()
 filetype plugin indent on
 
@@ -74,6 +75,8 @@ set clipboard=unnamed
 " 在vim中可以使用鼠标.
 set mouse=a
 " set paste
+" 不知道macvim为啥json文件不显示双引号.
+let g:vim_json_syntax_conceal = 0
 
 " 设置emmet
 autocmd FileType html,css,scss,sass EmmetInstall
