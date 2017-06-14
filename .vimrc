@@ -27,6 +27,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'raimondi/delimitmate'
 Plugin 'elzr/vim-json'
+Plugin 't9md/vim-choosewin'
 call vundle#end()
 filetype plugin indent on
 
@@ -77,6 +78,10 @@ set mouse=a
 " set paste
 " 不知道macvim为啥json文件不显示双引号.
 let g:vim_json_syntax_conceal = 0
+
+" choosewin设置.
+nmap - <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
 
 " 设置emmet
 autocmd FileType html,css,scss,sass EmmetInstall
