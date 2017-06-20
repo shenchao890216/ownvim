@@ -13,6 +13,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
@@ -40,6 +41,7 @@ syntax enable
 syntax on
 " 设置不备份文件.
 set nobackup
+set backupcopy=yes
 set noswapfile
 " 设置缩进.
 set tabstop=2
@@ -123,7 +125,9 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h18
+  set guifont=Source_Code_Pro_for_Powerline:h16
+  set background=dark
+  colorscheme solarized
 endif
 
 
