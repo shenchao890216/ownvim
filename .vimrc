@@ -1,6 +1,6 @@
 " Configuration file for vim
-set modelines=0		" CVE-2007-2438
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set modelines=0   " CVE-2007-2438
+set nocompatible  " Use Vim defaults instead of 100% vi compatibility
 
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 filetype off
@@ -29,6 +29,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'raimondi/delimitmate'
 Plugin 'elzr/vim-json'
 Plugin 't9md/vim-choosewin'
+Plugin 'chiel92/vim-autoformat'
 call vundle#end()
 filetype plugin indent on
 
@@ -97,6 +98,10 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+" autoformat设置.
+noremap <F2> :Autoformat<CR>
+let g:autoformat_verbosemode=1
+
 " 设置nerdtree
 map <F5> :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
@@ -126,8 +131,8 @@ if has("gui_running")
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
   set guifont=Source_Code_Pro_for_Powerline:h16
-  set background=dark
-  colorscheme solarized
+  " set background=dark
+  " colorscheme solarized
 endif
 
 
