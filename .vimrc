@@ -30,6 +30,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'elzr/vim-json'
 Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 filetype plugin indent on
 
@@ -37,6 +38,7 @@ filetype plugin indent on
 let mapleader=";"
 " 设置行号.
 set number
+set relativenumber
 " 开启语法高亮.
 syntax enable
 syntax on
@@ -51,7 +53,7 @@ set shiftwidth=2
 set autoindent
 set expandtab
 " molokai设置.
-" let g:molokai_original = 1
+let g:molokai_original = 1
 let g:rehash256 = 1
 " 设置配色.
 colorscheme molokai
@@ -78,6 +80,8 @@ set fileencodings=utf-8
 set clipboard=unnamed
 " 在vim中可以使用鼠标.
 set mouse=a
+" 设置不折行
+set nowrap
 " set paste
 " 不知道macvim为啥json文件不显示双引号.
 let g:vim_json_syntax_conceal = 0
@@ -121,6 +125,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
+map <F8> :CtrlPBuffer<CR>
 
 " 配置macvim
 if has("gui_running")
@@ -130,7 +135,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h16
+  set guifont=Source_Code_Pro_for_Powerline:h18
   " set background=dark
   " colorscheme solarized
 endif
