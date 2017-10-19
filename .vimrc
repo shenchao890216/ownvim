@@ -136,8 +136,8 @@ if has("gui_running")
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
   set guifont=Source_Code_Pro_for_Powerline:h18
-  set background=dark
-  colorscheme solarized
+  " set background=dark
+  " colorscheme solarized
 endif
 
 
