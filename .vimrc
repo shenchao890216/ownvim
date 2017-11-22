@@ -31,6 +31,7 @@ Plugin 'elzr/vim-json'
 Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'dracula/vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -56,7 +57,8 @@ set expandtab
 let g:molokai_original = 1
 let g:rehash256 = 1
 " 设置配色.
-colorscheme molokai
+" colorscheme molokai
+colorscheme dracula
 " 设置配色256.
 set t_Co=256
 " 突出当前行.
@@ -83,6 +85,8 @@ set mouse=a
 " 设置不折行
 set nowrap
 " set paste
+" 设置vim计算为十进制.
+set nrformats=
 " 不知道macvim为啥json文件不显示双引号.
 let g:vim_json_syntax_conceal = 0
 
@@ -125,7 +129,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
-map <F8> :CtrlPBuffer<CR>
+map <leader>f :CtrlPMixed<CR>
 
 " 配置macvim
 if has("gui_running")
