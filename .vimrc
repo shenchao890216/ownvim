@@ -132,6 +132,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
 map <leader>f :CtrlPMixed<CR>
+map <leader>b :CtrlPBuffer<CR>
 
 " 配置macvim
 if has("gui_running")
