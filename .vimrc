@@ -89,6 +89,8 @@ set nowrap
 set nrformats=
 " 不知道macvim为啥json文件不显示双引号.
 let g:vim_json_syntax_conceal = 0
+" 解决命令行vim延迟问题.
+set noesckeys
 
 " choosewin设置.
 nmap - <Plug>(choosewin)
