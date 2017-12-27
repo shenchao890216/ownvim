@@ -140,8 +140,10 @@ map <leader>b :CtrlPBuffer<CR>
 " 始终开启标志列.
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
+" let g:ale_linters = {'javascript': ['eslint']}
+" let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['standard']}
+let g:ale_fixers = {'javascript': ['standard']}
 " <Leader>s 触发/关闭语法检查.
 nmap <Leader>s :ALEToggle<CR>
 " <Leader>d 查看错误或警告的详细信息.
@@ -157,7 +159,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h18
+  set guifont=Source_Code_Pro_for_Powerline:h14
   " set background=dark
   " colorscheme solarized
 endif
