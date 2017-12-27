@@ -32,6 +32,7 @@ Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
+Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -131,8 +132,22 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = 'node_modules'
 let g:ctrlp_map='<F4>'
-map <leader>f :CtrlPMixed<CR>
+" map <leader>f :CtrlPMixed<CR>
+map <leader>f :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
+
+" 配置ale.
+" 始终开启标志列.
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
+" <Leader>s 触发/关闭语法检查.
+nmap <Leader>s :ALEToggle<CR>
+" <Leader>d 查看错误或警告的详细信息.
+nmap <Leader>d :ALEDetail<CR>
+" <Leader>f 修复.
+nmap <Leader>f <Plug>(ale_fix)
 
 " 配置macvim
 if has("gui_running")
@@ -142,7 +157,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h14
+  set guifont=Source_Code_Pro_for_Powerline:h18
   " set background=dark
   " colorscheme solarized
 endif
