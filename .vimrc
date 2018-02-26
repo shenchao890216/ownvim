@@ -33,6 +33,7 @@ Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
 " Plugin 'w0rp/ale'
+Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
 
