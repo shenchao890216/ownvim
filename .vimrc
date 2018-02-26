@@ -32,7 +32,7 @@ Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
-Plugin 'w0rp/ale'
+" Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -92,6 +92,10 @@ set nrformats=
 let g:vim_json_syntax_conceal = 0
 " 解决命令行vim延迟问题.
 set noesckeys
+" 代码折叠问题.
+set foldmethod=syntax
+" vim启动时关闭折叠.
+set nofoldenable
 
 " choosewin设置.
 nmap - <Plug>(choosewin)
@@ -138,18 +142,18 @@ map <leader>b :CtrlPBuffer<CR>
 
 " 配置ale.
 " 始终开启标志列.
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
+" let g:ale_sign_column_always = 1
+" let g:ale_set_highlights = 0
 " let g:ale_linters = {'javascript': ['eslint']}
 " let g:ale_fixers = {'javascript': ['eslint']}
-let g:ale_linters = {'javascript': ['standard']}
-let g:ale_fixers = {'javascript': ['standard']}
+" let g:ale_linters = {'javascript': ['eslint','standard']}
+" let g:ale_fixers = {'javascript': ['eslint','standard']}
 " <Leader>s 触发/关闭语法检查.
-nmap <Leader>s :ALEToggle<CR>
+" nmap <Leader>s :ALEToggle<CR>
 " <Leader>d 查看错误或警告的详细信息.
-nmap <Leader>d :ALEDetail<CR>
+" nmap <Leader>d :ALEDetail<CR>
 " <Leader>f 修复.
-nmap <Leader>f <Plug>(ale_fix)
+" nmap <Leader>r <Plug>(ale_fix)
 
 " 配置macvim
 if has("gui_running")
@@ -159,7 +163,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h14
+  set guifont=Source_Code_Pro_for_Powerline:h18
   " set background=dark
   " colorscheme solarized
 endif
@@ -168,6 +172,9 @@ endif
 if has("autocmd")
   autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
 endif
+
+" 指定phtml为html.
+" au BufNewFile,BufRead *.phtml set filetype=html
 
 " Don't write backup file if vim is being called by "crontab -e"
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
