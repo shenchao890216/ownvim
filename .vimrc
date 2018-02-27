@@ -119,10 +119,13 @@ noremap <F2> :Autoformat<CR>
 let g:autoformat_verbosemode=1
 
 " 设置nerdtree
-map <F5> :NERDTreeToggle<CR>
+" map <F5> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
 let NERDTreeShowBookmarks=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeIgnore = ['\._\.DS_Store', '\.DS_Store', '\.git', '\.idea', '\.sass-cache']
+" 显示所有文件（包括隐藏文件）.
+" let NERDTreeShowHidden = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " 关闭时如果只有nerdtree，就关闭它
