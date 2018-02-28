@@ -119,8 +119,8 @@ noremap <F2> :Autoformat<CR>
 let g:autoformat_verbosemode=1
 
 " 设置nerdtree
-" map <F5> :NERDTreeToggle<CR>
-map <C-n> :NERDTreeToggle<CR>
+map <F5> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore = ['\._\.DS_Store', '\.DS_Store', '\.git', '\.idea', '\.sass-cache']
@@ -167,7 +167,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h18
+  set guifont=Source_Code_Pro_for_Powerline:h14
   " set background=dark
   " colorscheme solarized
 endif
