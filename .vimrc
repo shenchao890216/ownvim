@@ -97,6 +97,12 @@ set noesckeys
 set foldmethod=syntax
 " vim启动时关闭折叠.
 set nofoldenable
+" 快速高亮搜索结果.
+noremap <Leader> h :set hlsearch! hlsearch?<CR>
+
+" easymotion配置.
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
 
 " choosewin设置.
 nmap - <Plug>(choosewin)
@@ -167,7 +173,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h14
+  set guifont=Source_Code_Pro_for_Powerline:h16
   " set background=dark
   " colorscheme solarized
 endif
