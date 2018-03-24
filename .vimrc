@@ -38,7 +38,7 @@ call vundle#end()
 filetype plugin indent on
 
 " 设置快捷键前缀
-let mapleader=";"
+let mapleader="\<Space>"
 " 设置行号.
 set number
 set relativenumber
@@ -94,15 +94,15 @@ let g:vim_json_syntax_conceal = 0
 " 解决命令行vim延迟问题.
 set noesckeys
 " 代码折叠问题.
-set foldmethod=syntax
+set foldmethod=indent
 " vim启动时关闭折叠.
 set nofoldenable
 " 快速高亮搜索结果.
 noremap <Leader> h :set hlsearch! hlsearch?<CR>
 
 " easymotion配置.
-map <Leader><leader>h <Plug>(easymotion-linebackward)
-map <Leader><leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
 
 " choosewin设置.
 nmap - <Plug>(choosewin)
@@ -173,7 +173,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h16
+  set guifont=Source_Code_Pro_for_Powerline:h18
   " set background=dark
   " colorscheme solarized
 endif
