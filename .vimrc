@@ -32,6 +32,7 @@ Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'w0rp/ale'
 Plugin 'wakatime/vim-wakatime'
 call vundle#end()
@@ -173,7 +174,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Source_Code_Pro_for_Powerline:h18
+  set guifont=Sauce_Code_Powerline:h18
   " set background=dark
   " colorscheme solarized
 endif
