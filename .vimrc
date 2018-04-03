@@ -33,7 +33,7 @@ Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'w0rp/ale'
+Plugin 'w0rp/ale'
 Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
@@ -153,18 +153,18 @@ map <leader>b :CtrlPBuffer<CR>
 
 " 配置ale.
 " 始终开启标志列.
-" let g:ale_sign_column_always = 1
-" let g:ale_set_highlights = 0
-" let g:ale_linters = {'javascript': ['eslint']}
-" let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_linters = {'javascript': ['standard']}
+let g:ale_fixers = {'javascript': ['eslint']}
 " let g:ale_linters = {'javascript': ['eslint','standard']}
 " let g:ale_fixers = {'javascript': ['eslint','standard']}
 " <Leader>s 触发/关闭语法检查.
-" nmap <Leader>s :ALEToggle<CR>
+nmap <Leader>s :ALEToggle<CR>
 " <Leader>d 查看错误或警告的详细信息.
-" nmap <Leader>d :ALEDetail<CR>
+nmap <Leader>d :ALEDetail<CR>
 " <Leader>f 修复.
-" nmap <Leader>r <Plug>(ale_fix)
+nmap <Leader>r <Plug>(ale_fix)
 
 " 配置macvim
 if has("gui_running")
