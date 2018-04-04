@@ -156,7 +156,7 @@ map <leader>b :CtrlPBuffer<CR>
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
 let g:ale_linters = {'javascript': ['standard']}
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['standard']}
 " let g:ale_linters = {'javascript': ['eslint','standard']}
 " let g:ale_fixers = {'javascript': ['eslint','standard']}
 " <Leader>s 触发/关闭语法检查.
@@ -174,7 +174,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Sauce_Code_Powerline:h18
+  set guifont=Sauce_Code_Powerline:h16
   " set background=dark
   " colorscheme solarized
 endif
