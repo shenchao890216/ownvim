@@ -32,12 +32,14 @@ Plugin 't9md/vim-choosewin'
 Plugin 'chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'dracula/vim'
+Plugin 'posva/vim-vue'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'w0rp/ale'
-Plugin 'wakatime/vim-wakatime'
+" Plugin 'w0rp/ale'
+" Plugin 'wakatime/vim-wakatime'
 call vundle#end()
 filetype plugin indent on
 
+" set termguicolors
 " 设置快捷键前缀
 let mapleader="\<Space>"
 " 设置行号.
@@ -57,13 +59,18 @@ set shiftwidth=2
 set autoindent
 set expandtab
 " molokai设置.
-let g:molokai_original = 1
-let g:rehash256 = 1
-" 设置配色.
-" colorscheme molokai
-colorscheme dracula
+" let g:molokai_original = 1
+" jlet g:rehash256 = 1
 " 设置配色256.
 set t_Co=256
+" 设置配色.
+" colorscheme molokai
+let g:dracula_italic = 0
+colorscheme dracula
+highlight Normal ctermbg=None
+if !has("gui_running")
+  highlight LineNr ctermfg=grey ctermbg=237
+endif
 " 突出当前行.
 set cursorline
 " 自动切换到当前目录.
@@ -153,18 +160,18 @@ map <leader>b :CtrlPBuffer<CR>
 
 " 配置ale.
 " 始终开启标志列.
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
-let g:ale_linters = {'javascript': ['standard']}
-let g:ale_fixers = {'javascript': ['standard']}
+" let g:ale_sign_column_always = 1
+" let g:ale_set_highlights = 0
+" let g:ale_linters = {'javascript': ['standard']}
+" let g:ale_fixers = {'javascript': ['standard']}
 " let g:ale_linters = {'javascript': ['eslint','standard']}
 " let g:ale_fixers = {'javascript': ['eslint','standard']}
 " <Leader>s 触发/关闭语法检查.
-nmap <Leader>s :ALEToggle<CR>
+" nmap <Leader>s :ALEToggle<CR>
 " <Leader>d 查看错误或警告的详细信息.
-nmap <Leader>d :ALEDetail<CR>
+" nmap <Leader>d :ALEDetail<CR>
 " <Leader>f 修复.
-nmap <Leader>r <Plug>(ale_fix)
+" nmap <Leader>r <Plug>(ale_fix)
 
 " 配置macvim
 if has("gui_running")
@@ -174,7 +181,7 @@ if has("gui_running")
   set guioptions-=r
   " 设置gui的字体
   " set guifont=Literation_Mono_Powerline:h18
-  set guifont=Sauce_Code_Powerline:h16
+  set guifont=Source_Code_Pro_for_Powerline:h16
   " set background=dark
   " colorscheme solarized
 endif
