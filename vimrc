@@ -59,14 +59,14 @@ set shiftwidth=2
 set autoindent
 set expandtab
 " molokai设置.
-" let g:molokai_original = 1
-" jlet g:rehash256 = 1
+let g:molokai_original = 1
+let g:rehash256 = 1
 " 设置配色256.
 set t_Co=256
 " 设置配色.
-" colorscheme molokai
-let g:dracula_italic = 0
-colorscheme dracula
+colorscheme molokai
+" let g:dracula_italic = 0
+" colorscheme dracula
 highlight Normal ctermbg=None
 if !has("gui_running")
   highlight LineNr ctermfg=grey ctermbg=237
